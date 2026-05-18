@@ -55,7 +55,7 @@ const History = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('http://localhost:8000/api/history', {
+            const response = await axios.get('https://restro-pos-backend.onrender.com/api/history', {
                 withCredentials: true,
                 headers: {
                     "Content-Type": "application/json",
