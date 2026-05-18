@@ -21,7 +21,8 @@ connectDB()
 
 app.use(cors({
     credentials: true,
-    origin: ['http://localhost:5173']
+    // origin: ['http://localhost:5173']
+    origin: ['https://restro-pos-chi.vercel.app']
 }))
 app.use(express.json())   // parse incoming request in json format
 app.use(cookieParser())
