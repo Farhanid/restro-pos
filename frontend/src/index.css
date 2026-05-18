@@ -1,0 +1,279 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Moon+Dance&display=swap');
+
+@import "tailwindcss";
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Hide scrollbar but keep scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* FullScreen Loader */
+.fullscreen-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Basic Spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #333;
+  border-top: 5px solid #facc15; /* yellow */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Optional: Different loader styles */
+
+/* Double Ring Spinner */
+.spinner-double {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #facc15;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: relative;
+}
+
+.spinner-double::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 5px solid #333;
+  border-bottom: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 2s linear infinite reverse;
+}
+
+/* Pulsing Loader */
+.spinner-pulse {
+  width: 60px;
+  height: 60px;
+  background-color: #facc15;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Dots Loader */
+.spinner-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.spinner-dots div {
+  width: 12px;
+  height: 12px;
+  background-color: #facc15;
+  border-radius: 50%;
+  animation: bounce 0.5s ease-in-out infinite alternate;
+}
+
+.spinner-dots div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.spinner-dots div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+/* Restaurant themed loader */
+.spinner-food {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.spinner-food::before,
+.spinner-food::after {
+  content: '🍔';
+  position: absolute;
+  font-size: 40px;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.spinner-food::after {
+  content: '🍕';
+  animation-delay: 0.5s;
+}
+
+/* Text styles */
+.loader-text {
+  color: #f5f5f5;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+/* Universal Scrollbar Hide - Works on all browsers */
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Optional: If you want to keep functionality but hide only on specific elements */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Keep body scroll functional but hidden */
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* For any element with overflow */
+.overflow-auto, 
+.overflow-y-auto, 
+.overflow-x-auto,
+.overflow-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.overflow-auto::-webkit-scrollbar, 
+.overflow-y-auto::-webkit-scrollbar, 
+.overflow-x-auto::-webkit-scrollbar,
+.overflow-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Custom scrollbar for the orders list */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #025cca #1f1f24;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1f1f24;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #025cca, #0284c7);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0284c7, #025cca);
+}
