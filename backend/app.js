@@ -15,15 +15,18 @@ import historyRoute from './routes/historyRoute.js';
 
 
 const app = express();
-const port = config.port;
+const port = process.env.PORT || config.port;
 connectDB()
 
 
 app.use(cors({
     credentials: true,
-    // origin: ['http://localhost:5173']
-    origin: ['https://restro-pos-chi.vercel.app']
+    origin: [
+        'http://localhost:5173',
+        'https://restro-pos-chi.vercel.app'
+    ]
 }))
+
 app.use(express.json())   // parse incoming request in json format
 app.use(cookieParser())
 // app.use(express.urlencoded({ extended: true }));
